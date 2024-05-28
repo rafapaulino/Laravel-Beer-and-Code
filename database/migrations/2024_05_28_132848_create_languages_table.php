@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('developers', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->nullable();
-            $table->string('profile');
-            $table->integer('followers')->default(0);
-            $table->integer('stars')->default(0);
-            $table->integer('forks')->default(0);
+            $table->string('language');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('developers');
+        Schema::dropIfExists('languages');
     }
 };
